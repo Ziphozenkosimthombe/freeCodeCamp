@@ -1,17 +1,29 @@
-﻿// different methods in C#
+﻿using System;
 
-//Random method
-Random dice = new Random();
-int roll = dice.Next(1, 7);
-Console.Write($"{roll}\n");
+public partial class Program
+{
+    static void Main(string[] args)
+    {
+        MyMathClass myNewObject = new MyMathClass();
+        myNewObject.math();
 
-// overloaded versions of the Random.Next() method
-int roll1 = dice.Next();
-int roll2 = dice.Next(101);
-int roll3 = dice.Next(50, 101);
+        // different methods in C#
 
-Console.WriteLine($"First roll: {roll1}");
-Console.WriteLine($"Second roll: {roll2}");
-Console.WriteLine($"Third roll: {roll3}");
+        //Random method
+        Random dice = new Random();
+        int roll = dice.Next(1, 7);
+        Console.Write($"{roll}\n");
+
+        // overloaded versions of the Random.Next() method
+        int roll1 = dice.Next();
+        int roll2 = dice.Next(101);
+        int roll3 = dice.Next(50, 101);
+
+        Console.WriteLine($"First roll: {roll1}");
+        Console.WriteLine($"Second roll: {roll2}");
+        Console.WriteLine($"Third roll: {roll3}");
+
+    }
 
 
+}
