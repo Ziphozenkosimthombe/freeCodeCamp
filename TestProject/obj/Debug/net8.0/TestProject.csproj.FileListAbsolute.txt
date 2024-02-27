@@ -1,0 +1,15 @@
+/home/ziphoncayiyana/CsharpProjects/TestProject/bin/Debug/net8.0/TestProject
+/home/ziphoncayiyana/CsharpProjects/TestProject/bin/Debug/net8.0/TestProject.deps.json
+/home/ziphoncayiyana/CsharpProjects/TestProject/bin/Debug/net8.0/TestProject.runtimeconfig.json
+/home/ziphoncayiyana/CsharpProjects/TestProject/bin/Debug/net8.0/TestProject.dll
+/home/ziphoncayiyana/CsharpProjects/TestProject/bin/Debug/net8.0/TestProject.pdb
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.GeneratedMSBuildEditorConfig.editorconfig
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.AssemblyInfoInputs.cache
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.AssemblyInfo.cs
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.csproj.CoreCompileInputs.cache
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.sourcelink.json
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.dll
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/refint/TestProject.dll
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.pdb
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.genruntimeconfig.cache
+/home/ziphoncayiyana/CsharpProjects/TestProject/obj/Debug/net8.0/ref/TestProject.dll
