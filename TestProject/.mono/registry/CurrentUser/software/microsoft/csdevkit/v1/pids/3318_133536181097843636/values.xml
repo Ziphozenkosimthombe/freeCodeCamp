@@ -2,7 +2,7 @@
   <value name="ShutdownReason" type="int">3</value>
   <value name="PID" type="int">3318</value>
   <value name="vscodeversion" type="string">1.86.2</value>
-  <value name="StillAlive" type="qword">133536199414610603</value>
+  <value name="StillAlive" type="qword">133536211419458920</value>
   <value name="CTime" type="qword">133536181097843636</value>
   <value name="VSExeVersion" type="string">4.1000.24.10211</value>
   <value name="extversion" type="string">1.3.10</value>
