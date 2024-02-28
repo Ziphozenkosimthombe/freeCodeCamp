@@ -23,10 +23,17 @@ public class MyNested{
                 total += 2;
             }
         }
-        if (total >= 15){
-            Console.WriteLine($"Yor total score is {total} so, You win!!!!");
-        }else{
-            Console.WriteLine($"Your total score is {total} so, Sorry you lose...please try again.....");
+        if (total >= 16){
+            Console.WriteLine("You win a new car!");
+        }
+        else if (total >= 10){
+            Console.WriteLine("You win a new laptop!");
+        }
+        else if (total == 7){
+            Console.WriteLine("You win a trip for two!");
+        }
+        else{
+            Console.WriteLine("You win a kitten!");
         }
 
     }
