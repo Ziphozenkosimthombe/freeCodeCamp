@@ -30,6 +30,11 @@ public  class Program
 
         MyChallengeTask myNewObject6 = new();
         myNewObject6.TaskChallenge();
+
+
+        //calling the DeclareNewArray.cs file
+        DeclareNewArray myNewObject7 = new();
+        myNewObject7.arr();
        
        
         
