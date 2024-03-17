@@ -35,6 +35,15 @@ public  class Program
         //calling the DeclareNewArray.cs file
         DeclareNewArray myNewObject7 = new();
         myNewObject7.arr();
+
+        //calling the ForLoop.cs file
+        LoopingThroughAnArrayUsingForeach myNewObject8 = new();
+        myNewObject8.looping();
+
+
+        //calling the Code challenge2.cs file
+        MyChallengeForLoopAndArray myNewObject9 = new();
+        myNewObject9.TaskChallengeTwo();
        
        
         
