@@ -22,13 +22,9 @@
 8. application needs to support adding other students and scores with minimal impact to the code.
 */
 
-
-using System;
-
-
 public class GradeStudentFinalMarks
 {
-    public void studentGrades()
+    public static void studentGrades()
     {
         int currentAssignments = 5;
 
