@@ -1,0 +1,13 @@
+﻿<values>
+  <value name="ShutdownReason" type="int">3</value>
+  <value name="extname" type="string">ms-dotnettools.csdevkit</value>
+  <value name="VSExeVersion" type="string">4.1000.24.12402</value>
+  <value name="vscodeversion" type="string">1.87.1</value>
+  <value name="StillAlive" type="qword">133552230183867880</value>
+  <value name="ExeName" type="string">Microsoft.CodeAnalysis.LanguageServer</value>
+  <value name="CTime" type="qword">133552205931129015</value>
+  <value name="VSInstanceId" type="string">2b2a8e5d-13f9-4676-b5b0-46f924cbe3761710746958829</value>
+  <value name="PID" type="int">6122</value>
+  <value name="extversion" type="string">1.4.29</value>
+  <value name="VSIs64BitProcess" type="string">True</value>
+</values>

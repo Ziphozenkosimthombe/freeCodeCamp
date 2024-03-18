@@ -48,7 +48,7 @@ public  class Program
 
         //calling the GradeStudentFinalMarks.cs file
         GradeStudentFinalMarks myNewObject10 = new();
-        myNewObject10.studentGrades();
+        GradeStudentFinalMarks.studentGrades();
        
        
         

@@ -20,37 +20,41 @@
 6.application needs to automatically assign letter grades based on the calculated final score for each student.
 7. application needs to output/display each student’s name and formatted grade.
 8. application needs to support adding other students and scores with minimal impact to the code.
-*/ 
+*/
 
 
 using System;
 
 
-public class GradeStudentFinalMarks{
-    public void studentGrades(){
+public class GradeStudentFinalMarks
+{
+    public void studentGrades()
+    {
         int currentAssignments = 5;
 
-        int[] sophiaScores = {90, 86, 87, 98, 100};
-        int[] andrewScores = {92, 89, 81, 96, 90};
-        int[] emmaScores = {90, 85, 87, 98, 68};
-        int[] loganScores = {90, 95, 87, 88, 96};
+        int[] sophiaScores = [90, 86, 87, 98, 100];
+        int[] andrewScores = [92, 89, 81, 96, 90];
+        int[] emmaScores = [90, 85, 87, 98, 68];
+        int[] loganScores = [90, 95, 87, 88, 96];
 
 
 
-        //studentNames
+        //studentNames array of strings
+        string[] studentNames = ["Sophia", "Andrew", "Emma", "Logan"];
 
-        string[] studentNames = {"Sophia", "Andrew", "Emma", "Logan"};
-
-
+        // studentScores array of integers
         int[] studentScores = new int[10];
-        
+        // studentLetterGrades array of strings
+        string currentStudentLetterGrade = "";
+
         // Write the Report Header to the console
         Console.WriteLine("Student\t\tGrade\n");
-        foreach(string name in studentNames){
-
-
+        // Loop through each student in the studentNames array
+        foreach (string name in studentNames)
+        {
+            // Set the studentScores array to the appropriate student's scores
             string currentStudent = name;
-
+            
             if (currentStudent == "Sophia")
                 studentScores = sophiaScores;
 
@@ -62,30 +66,64 @@ public class GradeStudentFinalMarks{
 
             else if (currentStudent == "Logan")
                 studentScores = loganScores;
-
+            
+            
             // initialize/reset the sum of scored assignments
-            int sumAssignmentScores = 0;
+            int sumAssignmentScore = 0;
 
-            // initialize/reset the calculated average of exam + extra credit scores
+            // initialize/reset the current student's grade
             decimal currentStudentGrade = 0;
-
+            //initailize/reset the graded assignments
+            int gradedAssignments = 0;          
+            // Loop through each score in the studentScores array
             foreach (int score in studentScores)
             {
-                // add the exam score to the sum
-                sumAssignmentScores += score;
+                // increment the gradedAssignments variable
+                gradedAssignments += 1;                
+                if (gradedAssignments <= currentAssignments)
+                {
+                    sumAssignmentScore += score;
+                }
+                else
+                {
+                    sumAssignmentScore += score / 10;
+                }
             }
+            // Calculate the current student's grade
+            currentStudentGrade = (decimal)(sumAssignmentScore) / currentAssignments;
 
-            currentStudentGrade = (decimal)(sumAssignmentScores) / currentAssignments;
+            if (currentStudentGrade >= 97)
+                currentStudentLetterGrade = "A+";
+            else if (currentStudentGrade >= 93)
+                currentStudentLetterGrade = "A";
+            else if (currentStudentGrade >= 90)
+                currentStudentLetterGrade = "A-";
+            else if (currentStudentGrade >= 87)
+                currentStudentLetterGrade = "B+";
+            else if (currentStudentGrade >= 83)
+                currentStudentLetterGrade = "B";
+            else if (currentStudentGrade >= 80)
+                currentStudentLetterGrade = "B-";
+            else if (currentStudentGrade >= 77)
+                currentStudentLetterGrade = "C+";
+            else if (currentStudentGrade >= 73)
+                currentStudentLetterGrade = "C";
+            else if (currentStudentGrade >= 70)
+                currentStudentLetterGrade = "C-";
+            else if (currentStudentGrade >= 67)
+                currentStudentLetterGrade = "D+";
+            else if (currentStudentGrade >= 63)
+                currentStudentLetterGrade = "D";
+            else if (currentStudentGrade >= 60)
+                currentStudentLetterGrade = "D-";
+            else
+                currentStudentLetterGrade = "F";
 
-            Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t?");
+
+            Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+
         }
-
-        
-
-        
-
-
-
-
+        Console.WriteLine("Press Enter to continue...");
+        Console.WriteLine();
     }
 }
