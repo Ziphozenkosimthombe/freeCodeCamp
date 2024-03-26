@@ -55,8 +55,11 @@ namespace TestProject
             GradeStudentFinalMarks.studentGrades();
 
 
-            Discount myNewObject11 = new();
-            Discount.discount();
+            // Discount myNewObject11 = new();
+            // Discount.discount();
+
+            // FizzBuzz myNewObject12 = new();
+            // FizzBuzz.fizzBuzz();
             
            
            
