@@ -53,6 +53,10 @@ namespace TestProject
             //calling the GradeStudentFinalMarks.cs file
             GradeStudentFinalMarks myNewObject10 = new();
             GradeStudentFinalMarks.studentGrades();
+
+
+            Discount myNewObject11 = new();
+            Discount.discount();
             
            
            
