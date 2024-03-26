@@ -1,56 +1,77 @@
-/*
-- developing a Student Grading application that automates the calculation of grades
-- for each student in a class.
--  The parameter for application.
-
-1. start with four Students. Each student has five exam scores.
-2. Each exam score is an integer value, 0-100. where 100 represents 100% correct.
-3. A student's overall exam score is the average of their five exam scores.
-4. A student's letter grade is determined by the following table:
-    - 90-100: A
-    - 80-89: B
-    - 70-79: C
-    - 60-69: D
-    - 0-59: F
-5. Criteria for extra credit assignments:
-    - Include extra credit assignment scores in the student's scores array.
-    - Extra credit assignments are worth 10% of an exam score (when calculating the final numeric grade)
-    - Add extra credit assignment scores to the student's total exam score before calculating the final numeric grade.
-
-6.application needs to automatically assign letter grades based on the calculated final score for each student.
-7. application needs to output/display each student’s name and formatted grade.
-8. application needs to support adding other students and scores with minimal impact to the code.
+/* 
+This C# console application is designed to:
+- Use arrays to store student names and assignment scores.
+- Use a `foreach` statement to iterate through the student names as an outer program loop.
+- Use an `if` statement within the outer loop to identify the current student name and access that student's assignment scores.
+- Use a `foreach` statement within the outer loop to iterate though the assignment scores array and sum the values.
+- Use an algorithm within the outer loop to calculate the average exam score for each student.
+- Use an `if-elseif-else` construct within the outer loop to evaluate the average exam score and assign a letter grade automatically.
+- Integrate extra credit scores when calculating the student's final score and letter grade as follows:
+    - detects extra credit assignments based on the number of elements in the student's scores array.
+    - divides the values of extra credit assignments by 10 before adding extra credit scores to the sum of exam scores.
+- use the following report format to report student grades:
+    Student         Grad
+    Sophia:         92.2    A-
+    Andrew:         89.6    B+
+    Emma:           85.6    B
+    Logan:          91.2    A-
 */
+// using System;
+
+
 
 public class GradeStudentFinalMarks
 {
     public static void studentGrades()
     {
-        int currentAssignments = 5;
+    
+        /* 
+        This C# console application is designed to:
+        - Use arrays to store student names and assignment scores.
+        - Use a `foreach` statement to iterate through the student names as an outer program loop.
+        - Use an `if` statement within the outer loop to identify the current student name and access that student's assignment scores.
+        - Use a `foreach` statement within the outer loop to iterate though the assignment scores array and sum the values.
+        - Use an algorithm within the outer loop to calculate the average exam score for each student.
+        - Use an `if-elseif-else` construct within the outer loop to evaluate the average exam score and assign a letter grade automatically.
+        - Integrate extra credit scores when calculating the student's final score and letter grade as follows:
+            - detects extra credit assignments based on the number of elements in the student's scores array.
+            - divides the values of extra credit assignments by 10 before adding extra credit scores to the sum of exam scores.
+        - use the following report format to report student grades: 
 
-        int[] sophiaScores = [90, 86, 87, 98, 100];
-        int[] andrewScores = [92, 89, 81, 96, 90];
-        int[] emmaScores = [90, 85, 87, 98, 68];
-        int[] loganScores = [90, 95, 87, 88, 96];
+        Student         Exam Score      Overall Grade   Extra Credit
 
+        Sophia          92.2            95.88   A       92 (3.68 pts)
 
+        */
+        int examAssignments = 5;
 
-        //studentNames array of strings
         string[] studentNames = ["Sophia", "Andrew", "Emma", "Logan"];
 
-        // studentScores array of integers
+        int[] sophiaScores = [90, 86, 87, 98, 100, 94, 90];
+        int[] andrewScores = [92, 89, 81, 96, 90, 89];
+        int[] emmaScores = [90, 85, 87, 98, 68, 89, 89, 89];
+        int[] loganScores = [90, 95, 87, 88, 96, 96];
+
         int[] studentScores = new int[10];
-        // studentLetterGrades array of strings
+
         string currentStudentLetterGrade = "";
 
-        // Write the Report Header to the console
-        Console.WriteLine("Student\t\tGrade\n");
-        // Loop through each student in the studentNames array
+        // display the header row for scores/grades
+        Console.Clear();
+        Console.WriteLine("Student\t\tExam Score\tOverall Grade\tExtra Credit\n");
+
+        /*
+        The outer foreach loop is used to:
+        - iterate through student names 
+        - assign a student's grades to the studentScores array
+        - calculate exam and extra credit sums (inner foreach loop)
+        - calculate numeric and letter grade
+        - write the score report information
+        */
         foreach (string name in studentNames)
         {
-            // Set the studentScores array to the appropriate student's scores
             string currentStudent = name;
-            
+
             if (currentStudent == "Sophia")
                 studentScores = sophiaScores;
 
@@ -62,64 +83,95 @@ public class GradeStudentFinalMarks
 
             else if (currentStudent == "Logan")
                 studentScores = loganScores;
-            
-            
-            // initialize/reset the sum of scored assignments
-            int sumAssignmentScore = 0;
 
-            // initialize/reset the current student's grade
+            int gradedAssignments = 0;
+            int gradedExtraCreditAssignments = 0;
+
+            int sumExamScores = 0;
+            int sumExtraCreditScores = 0;
+
             decimal currentStudentGrade = 0;
-            //initailize/reset the graded assignments
-            int gradedAssignments = 0;          
-            // Loop through each score in the studentScores array
+            decimal currentStudentExamScore = 0;
+            decimal currentStudentExtraCreditScore = 0;
+
+            /* 
+            the inner foreach loop: 
+            - sums the exam and extra credit scores
+            - counts the extra credit assignments
+            */
             foreach (int score in studentScores)
             {
-                // increment the gradedAssignments variable
-                gradedAssignments += 1;                
-                if (gradedAssignments <= currentAssignments)
+                gradedAssignments += 1;
+
+                if (gradedAssignments <= examAssignments)
                 {
-                    sumAssignmentScore += score;
+                    sumExamScores += score;
                 }
+
                 else
                 {
-                    sumAssignmentScore += score / 10;
+                    gradedExtraCreditAssignments += 1;
+                    sumExtraCreditScores += score;
                 }
             }
-            // Calculate the current student's grade
-            currentStudentGrade = (decimal)(sumAssignmentScore) / currentAssignments;
+
+            currentStudentExamScore = (decimal)(sumExamScores) / examAssignments;
+            currentStudentExtraCreditScore = (decimal)(sumExtraCreditScores) / gradedExtraCreditAssignments;
+
+            currentStudentGrade = (decimal)((decimal)sumExamScores + ((decimal)sumExtraCreditScores / 10)) / examAssignments;
 
             if (currentStudentGrade >= 97)
                 currentStudentLetterGrade = "A+";
+
             else if (currentStudentGrade >= 93)
                 currentStudentLetterGrade = "A";
+
             else if (currentStudentGrade >= 90)
                 currentStudentLetterGrade = "A-";
+
             else if (currentStudentGrade >= 87)
                 currentStudentLetterGrade = "B+";
+
             else if (currentStudentGrade >= 83)
                 currentStudentLetterGrade = "B";
+
             else if (currentStudentGrade >= 80)
                 currentStudentLetterGrade = "B-";
+
             else if (currentStudentGrade >= 77)
                 currentStudentLetterGrade = "C+";
+
             else if (currentStudentGrade >= 73)
                 currentStudentLetterGrade = "C";
+
             else if (currentStudentGrade >= 70)
                 currentStudentLetterGrade = "C-";
+
             else if (currentStudentGrade >= 67)
                 currentStudentLetterGrade = "D+";
+
             else if (currentStudentGrade >= 63)
                 currentStudentLetterGrade = "D";
+
             else if (currentStudentGrade >= 60)
                 currentStudentLetterGrade = "D-";
+
             else
                 currentStudentLetterGrade = "F";
 
 
-            Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+            // Student         Exam Score      Overall Grade   Extra Credit
+            // Sophia          92.2            95.88   A       92 (3.68 pts)
 
+            Console.WriteLine($"{currentStudent}\t\t{currentStudentExamScore}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t{currentStudentExtraCreditScore} ({(((decimal)sumExtraCreditScores / 10) / examAssignments)} pts)");
         }
-        Console.WriteLine("Press Enter to continue...");
-        Console.WriteLine();
+
+        // required for running in VS Code (keeps the Output windows open to view results)
+        Console.WriteLine("\n\rPress the Enter key to continue");
+        Console.ReadLine();
+
     }
+    
+    
 }
+    
