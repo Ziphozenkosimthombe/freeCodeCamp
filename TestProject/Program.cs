@@ -51,8 +51,12 @@ namespace TestProject
     
     
             //calling the GradeStudentFinalMarks.cs file
-            GradeStudentFinalMarks myNewObject10 = new();
-            GradeStudentFinalMarks.studentGrades();
+            // GradeStudentFinalMarks myNewObject10 = new();
+            // GradeStudentFinalMarks.studentGrades();
+
+            //calling the Contoso.Pets.Application.cs file
+            ContosoPets myNewObject11 = new();
+            ContosoPets.application();
 
 
             // Discount myNewObject11 = new();
