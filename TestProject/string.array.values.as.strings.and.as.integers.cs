@@ -12,7 +12,7 @@ class MainClass {
             if(double.TryParse(value, out nuemericalValue)){
                 total += nuemericalValue;
             } else {
-                message += value + " ";
+                message += value;
             }
         }
         Console.WriteLine($"Message: {message}");
